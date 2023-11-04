@@ -11,7 +11,7 @@ For those without access to the main payee account or AWS Organizations, getting
 
 We decided to try to leverage the [Cost & Usage Reports](https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html) ("CUR") service from AWS instead. It's a built-in capability which generates files that can be programmatically accessed. The granularity is from 1 hour - 1 month. You can also decide what type of file you'd like generated, e.g. parquet or gzip:ed csv files.
 
-Today I'm sharing an architecture which generates CUR and forwards them automatically to an aggregation bucket as they are produced. This makes it simple to use Athena in an efficient manner.
+Today I'm sharing an architecture which generates CUR and forwards them automatically to an aggregation bucket as they are produced. This makes it simple to use Athena in an efficient manner. I wrote another post about [how we use Athena on our CUR](/2023/11/04/cur-w-athena.html).
 
 ## Some thoughts about Cost & Usage Reports
 CUR has lots of uses, and the fact that it's free makes it perfect to make experiments on. The only cost incurred is the writes and storage in S3 which is extremely cheap (at least in this context).
