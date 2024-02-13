@@ -10,7 +10,7 @@ I recently covered how to generate Cost & Usage Reports ("CUR") at scale [in ano
 I'm going to assume that a number of CUR are aggregated and stored in an S3 bucket according to the pattern
 
 ```
-s3://s3://{bucketname}/{someprefix}/account={accountId}
+s3://{bucketname}/{someprefix}/account={accountId}
 ```
 
 CUR will automatically save its files with the prefix `{granularity}`, e.g. if the chosen granularity is `DAILY` a file might have the complete S3 path
