@@ -74,10 +74,4 @@ Our template will create the following resources:
 
 [Link to cloudformation template on Github](https://github.com/otsu81/aws-cur-athena/blob/main/template.yaml)
 
-> ❗ **Gotcha**
-Cloudformation has trouble creating S3 buckets with Lambda triggers, as it creates a circular dependency. [It's a known problem.](https://aws.amazon.com/blogs/mt/resolving-circular-dependency-in-provisioning-of-amazon-s3-buckets-with-aws-lambda-event-notifications/)
-To keep the template as brief as possible we have opted to not use the custom resource solution, and instead you will need to deploy the template twice.
-1. Comment out the event part of the S3 bucket, and deploy
-1. Once deployment is completed, remove the comment and deploy again
-
 TODO: Make bucket and policy optional by adding boolean parameter for creation of bucket policy
